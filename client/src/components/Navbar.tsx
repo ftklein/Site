@@ -30,8 +30,12 @@ export default function Navbar() {
         <div className="flex h-20 items-center justify-between">
           <div className="flex items-center">
             <Link href="/">
-              <a className="flex items-center space-x-2">
-                <span className="text-2xl font-bold">FK Advocacia</span>
+              <a className="flex items-center">
+                <img 
+                  src="/attached_assets/01_FelipeKlein_Principal_Negativo.png" 
+                  alt="FK Advocacia" 
+                  className="h-12"
+                />
               </a>
             </Link>
           </div>
@@ -66,7 +70,13 @@ export default function Navbar() {
               </SheetTrigger>
               <SheetContent>
                 <SheetHeader>
-                  <SheetTitle>FK Advocacia</SheetTitle>
+                  <SheetTitle>
+                    <img 
+                      src="/attached_assets/01_FelipeKlein_Principal_Positivo.png" 
+                      alt="FK Advocacia" 
+                      className="h-8"
+                    />
+                  </SheetTitle>
                 </SheetHeader>
                 <div className="mt-6 flex flex-col space-y-2">
                   {navigation.map((item) => (
