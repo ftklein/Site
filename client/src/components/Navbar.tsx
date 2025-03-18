@@ -18,6 +18,7 @@ const navigation = [
   { name: "Áreas de Atuação", href: "/areas-atuacao" },
   { name: "Artigos", href: "/artigos" },
   { name: "Contato", href: "/contato" },
+  { name: "Dashboard", href: "/dashboard" },
 ];
 
 export default function Navbar() {
