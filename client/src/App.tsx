@@ -11,7 +11,7 @@ import LawyerPage from "@/pages/LawyerPage";
 import PracticeAreasPage from "@/pages/PracticeAreasPage";
 import ArticlesPage from "@/pages/ArticlesPage";
 import ContactPage from "@/pages/ContactPage";
-import DashboardPage from "@/pages/admin/DashboardPage";
+import DashboardPage from "@/pages/DashboardPage";
 import ArticleEditorPage from "@/pages/admin/ArticleEditorPage";
 import NotFound from "@/pages/not-found";
 
