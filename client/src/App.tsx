@@ -15,6 +15,32 @@ import DashboardPage from "@/pages/DashboardPage";
 import ArticleEditorPage from "@/pages/admin/ArticleEditorPage";
 import NotFound from "@/pages/not-found";
 
+export default function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <div className="flex-1">
+          <Switch>
+            <Route path="/" component={HomePage} />
+            <Route path="/office" component={OfficePage} />
+            <Route path="/lawyer" component={LawyerPage} />
+            <Route path="/practice-areas" component={PracticeAreasPage} />
+            <Route path="/articles" component={ArticlesPage} />
+            <Route path="/contact" component={ContactPage} />
+            <Route path="/dashboard" component={DashboardPage} />
+            <Route path="/admin/articles/new" component={ArticleEditorPage} />
+            <Route path="/admin/articles/:id/edit" component={ArticleEditorPage} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
+        <Footer />
+      </div>
+      <Toaster />
+    </QueryClientProvider>
+  );
+}
+
 function Router() {
   return (
     <div className="min-h-screen flex flex-col">
