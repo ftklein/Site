@@ -97,6 +97,57 @@ export default function DashboardPage() {
           </Button>
         </div>
 
+        <Card className="mb-6">
+          <CardHeader>
+            <CardTitle>Alterar Senha</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData(e.currentTarget);
+              const currentPassword = formData.get("currentPassword") as string;
+              const newPassword = formData.get("newPassword") as string;
+              
+              apiRequest("POST", "/api/auth/change-password", {
+                currentPassword,
+                newPassword
+              }).then(() => {
+                toast({
+                  title: "Senha alterada",
+                  description: "Sua senha foi alterada com sucesso.",
+                });
+                e.currentTarget.reset();
+              }).catch(() => {
+                toast({
+                  title: "Erro",
+                  description: "Senha atual incorreta.",
+                  variant: "destructive"
+                });
+              });
+            }} className="space-y-4">
+              <div>
+                <Input
+                  type="password"
+                  name="currentPassword"
+                  placeholder="Senha Atual"
+                  required
+                />
+              </div>
+              <div>
+                <Input
+                  type="password"
+                  name="newPassword"
+                  placeholder="Nova Senha"
+                  required
+                />
+              </div>
+              <Button type="submit">
+                Alterar Senha
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+
         <div className="grid md:grid-cols-2 gap-6">
           <Card>
             <CardHeader>

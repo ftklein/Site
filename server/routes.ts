@@ -108,6 +108,21 @@ export async function registerRoutes(app: Express) {
     res.json(req.user);
   });
 
+  app.post("/api/auth/change-password", requireAuth, async (req, res) => {
+    const { currentPassword, newPassword } = req.body;
+    const user = await storage.getUserById(req.user.id);
+
+    const validPassword = await bcrypt.compare(currentPassword, user.password);
+    if (!validPassword) {
+      return res.status(401).json({ message: "Senha atual incorreta" });
+    }
+
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    await storage.updateUserPassword(user.id, hashedPassword);
+
+    res.json({ message: "Senha alterada com sucesso" });
+  });
+
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     res.json({ message: "Logged in successfully" });
   });
