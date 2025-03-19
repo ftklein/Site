@@ -52,7 +52,7 @@ export async function registerRoutes(app: Express) {
 
   // Auth middleware
   const requireAuth = (req: any, res: any, next: any) => {
-    if (!req.isAuthenticated()) {
+    if (!req.headers['X-Replit-User-Id']) {
       return res.status(401).json({ message: "Unauthorized" });
     }
     next();
