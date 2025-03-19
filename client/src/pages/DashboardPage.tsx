@@ -34,7 +34,7 @@ export default function DashboardPage() {
       if (response.token) {
         localStorage.setItem("token", response.token);
         queryClient.invalidateQueries({ queryKey: ["/api/auth/user"] });
-        setLocation("/admin/artigos");
+        setLocation("/dashboard");
       }
       return response;
     },

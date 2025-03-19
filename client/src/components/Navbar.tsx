@@ -33,7 +33,7 @@ export default function Navbar() {
             <Link href="/">
               <a className="flex items-center">
                 <img 
-                  src="/attached_assets/01_FelipeKlein_Principal_Negativo.png" 
+                  src="/attached_assets/01_FelipeKlein_Principal_Positivo.png" 
                   alt="FK Advocacia" 
                   className="h-12"
                 />
