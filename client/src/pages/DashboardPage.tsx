@@ -31,11 +31,13 @@ export default function DashboardPage() {
   const loginMutation = useMutation({
     mutationFn: async (credentials: { username: string; password: string }) => {
       const response = await apiRequest("POST", "/api/auth/login", credentials);
-      localStorage.setItem("token", response.token);
+      if (response.token) {
+        localStorage.setItem("token", response.token);
+        queryClient.invalidateQueries({ queryKey: ["/api/auth/user"] });
+      }
       return response;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["/api/auth/user"] });
       toast({
         title: "Login realizado",
         description: "Você está conectado ao dashboard.",
@@ -107,7 +109,7 @@ export default function DashboardPage() {
               const formData = new FormData(e.currentTarget);
               const currentPassword = formData.get("currentPassword") as string;
               const newPassword = formData.get("newPassword") as string;
-              
+
               apiRequest("POST", "/api/auth/change-password", {
                 currentPassword,
                 newPassword
