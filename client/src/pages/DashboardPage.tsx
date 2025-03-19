@@ -157,22 +157,22 @@ export default function DashboardPage() {
               <CardTitle>Gerenciar Páginas</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <Link href="/dashboard/pages/home">
+              <Link href="/dashboard/pages/editor/home">
                 <Button variant="outline" className="w-full justify-start">
                   Página Inicial
                 </Button>
               </Link>
-              <Link href="/dashboard/pages/office">
+              <Link href="/dashboard/pages/editor/office">
                 <Button variant="outline" className="w-full justify-start">
                   Escritório
                 </Button>
               </Link>
-              <Link href="/dashboard/pages/lawyer">
+              <Link href="/dashboard/pages/editor/lawyer">
                 <Button variant="outline" className="w-full justify-start">
                   Advogado
                 </Button>
               </Link>
-              <Link href="/dashboard/pages/practice-areas">
+              <Link href="/dashboard/pages/editor/practice-areas">
                 <Button variant="outline" className="w-full justify-start">
                   Áreas de Atuação
                 </Button>

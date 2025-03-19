@@ -30,10 +30,10 @@ export default function App() {
             <Route path="/areas-atuacao" component={PracticeAreasPage} />
             <Route path="/artigos" component={ArticlesPage} />
             <Route path="/contato" component={ContactPage} />
-            <Route path="/dashboard/pages/home" component={DashboardPage} />
-            <Route path="/dashboard/pages/office" component={DashboardPage} />
-            <Route path="/dashboard/pages/lawyer" component={DashboardPage} />
-            <Route path="/dashboard/pages/practice-areas" component={DashboardPage} />
+            <Route path="/dashboard/pages/editor/home" component={PageEditorPage} />
+            <Route path="/dashboard/pages/editor/office" component={PageEditorPage} />
+            <Route path="/dashboard/pages/editor/lawyer" component={PageEditorPage} />
+            <Route path="/dashboard/pages/editor/practice-areas" component={PageEditorPage} />
             <Route path="/dashboard/articles/new" component={ArticleEditorPage} />
             <Route path="/dashboard/articles/:id/edit" component={ArticleEditorPage} />
             <Route path="/dashboard/articles" component={ArticlesListPage} />
