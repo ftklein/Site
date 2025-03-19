@@ -30,16 +30,16 @@ export default function App() {
             <Route path="/areas-atuacao" component={PracticeAreasPage} />
             <Route path="/artigos" component={ArticlesPage} />
             <Route path="/contato" component={ContactPage} />
-            <Route path="/admin">
+            <Route path="/dashboard">
               <DashboardPage />
             </Route>
-            <Route path="/admin/artigos/novo">
+            <Route path="/dashboard/articles/new">
               <ArticleEditorPage />
             </Route>
-            <Route path="/admin/artigos/:id/editar">
+            <Route path="/dashboard/articles/:id/edit">
               <ArticleEditorPage />
             </Route>
-            <Route path="/admin/artigos">
+            <Route path="/dashboard/articles">
               <ArticlesListPage />
             </Route>
             <Route component={NotFound} />

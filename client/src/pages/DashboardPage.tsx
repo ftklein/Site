@@ -184,7 +184,7 @@ export default function DashboardPage() {
             <CardHeader>
               <div className="flex justify-between items-center">
                 <CardTitle>Artigos</CardTitle>
-                <Link href="/admin/articles/new">
+                <Link href="/dashboard/articles/new">
                   <Button variant="outline" size="sm">
                     <Plus className="h-4 w-4 mr-2" />
                     Novo Artigo
@@ -193,7 +193,7 @@ export default function DashboardPage() {
               </div>
             </CardHeader>
             <CardContent>
-              <Link href="/admin/articles">
+              <Link href="/dashboard/articles">
                 <Button variant="outline" className="w-full justify-start">
                   Gerenciar Artigos
                 </Button>
